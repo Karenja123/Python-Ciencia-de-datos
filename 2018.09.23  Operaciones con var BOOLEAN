@@ -1,0 +1,42 @@
+#%%
+"""
+******************************************************************************************
+BOOLEANOS
+*****************************************************************************************
+"""
+variable_verdadera = True
+
+variable_negativa = False
+
+#%%
+print(type(variable_verdadera))
+#%%
+#Convertir STRING a BOOLEANO 
+##VERDADERO-String tiene carateres     Numeros tiene num
+mi_booleano = bool("python")
+print(mi_booleano)
+
+##FALSO   -String NO tiene caracteres  Numeros  tiene un 0 
+mi_booleano2 = bool("")
+print(mi_booleano2)
+
+mi_booleano3 = bool(0)
+print(mi_booleano3)
+
+#%%
+"""
+COMPARACIONES LOGICAS
+    Podemos 
+"""
+#%%
+a=7
+b=23
+
+print(a>b)
+print(a<b)
+print(a == b)
+print(a != b)
+
+print(a>b and variable_verdadera == True)
+print(a>b or variable_verdadera == True)
+#== tambien puede estar como "is"
