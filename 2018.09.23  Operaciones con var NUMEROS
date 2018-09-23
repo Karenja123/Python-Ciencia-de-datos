@@ -1,0 +1,42 @@
+#%%
+"""
+******************************************************************************************
+NUMEROS
+*****************************************************************************************
+"""
+
+entero = 78
+print(type(entero))
+
+decimal =78.2
+print(type(decimal))
+#%%
+#Convertir STRING con valor numérico a una var NUMERO
+numero_string = "35.6"
+numero_numero = float(numero_string)
+print(type(numero_numero))
+
+#Convertir de NUMERO  a STRING FUNCION str()
+
+print("2"+str(numero_numero))
+print(str(2)+str(numero_numero))
+
+
+
+#%%
+#Numeros como en SAP en puntos
+numero_string_malo ="23,5"
+print(float(numero_string_malo.replace(",",".")))
+
+#%%
+#Si al menos uno es un float realiza todas la operaciónes con float
+a=6.0
+b=3
+
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)
+print(a**b)#Potencia
+print(a%b)#Modulo (residuo de div) Sirve para identificar si un num es par 
+print(a//b)#Modulo(parte entera de la div)
