@@ -1,0 +1,162 @@
+# -*- coding: utf-8 -*-
+"""
+Estructuras avanzadas
+Created on Sun Sep 23 12:12:00 2018
+
+@author: mayth
+"""
+
+#%%
+"""
+********************************************************************************************
+LISTAS
+********************************************************************************************
+Las listas son conjuntos de elementos ordenados de 
+posicion
+"""
+nombres = "Yesica|MIguel|Jaquie|Karen|Aleph"
+nombres_lista = nombres.split("|")
+#%%
+#Generar una lista
+colores_ropa1 = ["blanco","azul","azul","blanco","negro",24,25.4,True,[1,2,3,4,5]]
+#No necesariamente debe tener el mismo tipo de variable
+colores_ropa = ["blanco","azul","azul","blanco","negro","verde","amarillo"]
+#%%
+print(nombres_lista)
+print(colores_ropa)
+#%%
+#Mandar a llamar uno de los elementos
+#DE IZQ a derecha empieza en 0, 1, 2
+# De derecha a izq   -3,-2,-1
+print(colores_ropa[6])
+print(colores_ropa[-1])
+#Resp: AMARILLO
+
+
+
+#%%
+#INDEX en lista
+# Del index que quiero : hasta el que quiero+1
+print(colores_ropa[0:3])
+print(colores_ropa[3:5])
+print(colores_ropa[-3:-1])
+#%%
+#Asignar nuevo valor (remplazar en listas por posicion)
+colores_ropa[0] = "morado"
+print(colores_ropa)
+#%%
+#Saltos con contador
+print(colores_ropa[0:5:2])
+#Contar las veces que se repite una palabra, etc
+print(colores_ropa.count("blanco"))
+
+#%%
+#Agregar un elemento al final de la lista
+colores_ropa.append("rojo")
+print(colores_ropa)
+
+#%%
+#Preguntar si hay un elemento en la lista
+print("gris" in colores_ropa)
+print("azul" in colores_ropa)
+#%%
+#Preguntar en qué posición existe
+print(colores_ropa.index("blanco"))
+#Recuerda que el primer elemento es 0 luego 1, 2, 3.. .. 
+
+#%%
+lista_compras = ["cerveza","Ron","Hielos","Vasos","sabritones"]
+print(lista_compras[1])
+#%%
+#Una vez que se accedio al valor hay que bprrarlo, combinacion 
+print(lista_compras.pop(0))
+
+#Quitas un elemento, te haces duelo y decides si haces algo o no le haces algo 
+print(lista_compras)
+
+#%%
+print(lista_compras.pop(lista_compras.index("cerveza"))
+#%%
+edad = [23,12,67,34,21,47,27,31]
+
+#%% 
+#Ordenar la lista de menor a mayo o A-Z
+edad.sort()
+print(edad)
+
+nombres_lista.sort()
+print(nombres_lista)
+#%%
+"""
+*******************************************************************************************
+TUPLAS (TUPLES)
+******************************************************************************************
+Las tuplas son versiones de las listas que no se pueden mover
+Ejemplo: Nombre,apellido, RFC, fecha de nacimiento
+Sabemos que nunca s evan a mover
+"""
+#%%
+#Para diferenciar una Tupla es por los PARENTESIS ()
+reyes_magos = ("Melchor","Gaspar", "Baltazar")
+print(reyes_magos[1])
+
+reyes_magos[1] ="Karen"
+#Sale error porque no podemos modificar la lista 
+
+#%%
+"""
+*******************************************************************************************
+DICCIONARIO
+******************************************************************************************
+Los diccionarios son un conjunto de claves (keys)
+Sabiendo una clave podemos encontrar el valor de 
+"""
+#Sabemos que e sun diccionario porque se declara con {}
+
+#%%
+
+lista_compras_dict = {"chelas":40,"hielo":2,"vasos":40,"sabritones":1,"ron":2}
+print(type(lista_compras_dict))
+
+#%%
+#Solo imprimir llaves
+compras_keys = lista_compras_dict.keys()
+print(compras_keys)
+print(compras_keys[0])#error porque e sun diccionario y no puede indexar
+
+
+#%%
+#Covertir diccionario a lista
+
+compras_keys_list = list(compras_keys)
+print(compras_keys_list[0])
+
+#%%
+compras_values = lista_compras_dict.values()
+print(type(compras_values))
+compras_value_list = list(compras_values)
+
+#%%
+print(compras_value_list)
+#%%
+#"Cuantas bottellas de ron?"
+print(lista_compras_dict["ron"])
+#%%
+print(lista_compras_dict)
+#%%
+#Agregar mas cosas a la lista
+print(lista_compras_dict["hielo"])
+lista_compras_dict["hielo"] = lista_compras_dict["hielo"]+1
+print(lista_compras_dict["hielo"])
+#%%
+#Quitar sabritones
+lista_compras_dict.pop("sabritones")
+#%%
+#La lista parece sin sabritones
+print(lista_compras_dict)
+#%%
+#Agregar datos al diccionario, es decir, una nueva llave
+lista_compras_dict["limon"] = 5
+print(lista_compras_dict)
+
+#%%
