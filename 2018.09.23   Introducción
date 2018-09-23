@@ -1,0 +1,105 @@
+# Python-Ciencia-de-datos
+
+Refiniamineto del lenguaje ABC 
+
+****CÓMO NOMBRAR ARCHIVOS?*****
+1. Nunca usar mayúsculas
+2.En vez de espacios es _ 
+3.Terminacion py
+4.Ejemplo
+  mi_primer_scrip.py
+  
+  
+****DÓNDE GUARDAR ARCHIVO?*****
+1.Crear nueva carpeta "Developer"
+2.Crear subcarpeta "Python", "R", etc... 
+3.Guardar archivo como "Sesion_01"
+
+****CÓMO DELIMITAR CELDA?*****
+#%%
+print("inicio")
+#%%
+Parte el codigo es decir solo corre ese pedazo 
+Ctrl+ENTER
+Sirve cuando pesa mucho la BD 
+
+##############################CLASE 01###################################
+
+SIEMPRE INCLUIR
+#!/usr/bin/env python3
+# -*- coding: utf8 -*-   (Es decir, soporta ñs acentos, ect.. sin embargo por buena sprácticas mo usarlo)
+
+##Para poner comerntarios 
+"""
+Mi primer hola mundo en Pyton 
+ Created on Sun Sep 23
+ @author: Karen Roldan
+ 
+"""
+print("Hola mundo")
+
+#!/usr/bin/env python3
+# -*- coding: utf8 -*-   (Es decir, soporta ñs acentos, ect.. sin embargo por buena sprácticas mo usarlo)
+
+##Para poner comentarios 
+"""
+Mi introducción a las variables en python 
+ Created on Sun Sep 23
+ @author: Karen Roldan
+ 
+"""
+#%%
+print("inicio")
+#%%
+print("Cargar DB")
+#%%
+print("final")
+#%%
+"""
+***************************************************************************************************************************************
+STRINGS
+***************************************************************************************************************************************
+"""
+mi_nombre = "karen roldan"
+un_texto = 'un texto bien padre'
+un_texto_en_ingles = """Y entonces el dijo: "I´m happy"""""
+print(un_texto_en_ingles)
+
+#%%
+print(type(mi_nombre)) 
+#Te dice qué tipo de variable es 
+
+#%%
+#Concatenar String
+saludo_texto_1 = "Hey"
+saludo_texto_2 = "¿Cómo estás?
+print(saludo_texto_1+" "+saludo_texto_2 )
+
+
+#%%
+#Multiplicar String
+un_string = "moja"
+print(un_string*10)
+
+
+#%%
+#Darle forma a un string
+nombre = "Luis Alonso"
+transporte = "Carro"
+string_con_formato = "Hola, me llamo {} y llegue en {}".format(nombre,transporte)
+print(string_con_formato)
+#%%
+
+#Mayúscula sy minúsculas
+titulo="Curso de PYTHON"
+#MAYUSCULAS
+print(titulo.upper())
+#Minusculas
+print(titulo.lower())
+#Capitalizar
+print(titulo.capitalize())
+print(titulo)
+
+#%%
+#%%
+
