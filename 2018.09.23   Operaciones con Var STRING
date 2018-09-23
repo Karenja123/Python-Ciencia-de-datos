@@ -101,5 +101,23 @@ print(titulo.capitalize())
 print(titulo)
 
 #%%
+#Limpiar archivo de caracteres que sabes son comune sy no van 
+nombre_basura = ",salvador,"
+print(nombre_basura.strip(","))
+
 #%%
+print(nombre_basura.replace("lvador","ntiago").strip(","))
+#%%
+#%%
+#Remplazar
+print(nombre_basura.replace("lvador","ntiago").strip(",").capitalize())
+#%%
+#Hacer array con un caracter distintivo en este caso |
+nombres = "Yesica|MIguel|Jaquie|Karen|Aleph"
+
+nombres_lista = nombres.split("|")
+
+print(nombres)
+print(nombres_lista)
+print(type(nombres_lista))
 
