@@ -1,0 +1,155 @@
+# -*- coding: utf-8 -*-
+"""
+Flujos de control
+
+Editor de Spyder
+
+Este es un archivo temporal
+"""
+#%%
+"""
+***********************************************************************************************
+IF - ELSE
+***********************************************************************************************
+
+"""
+#%%
+temperature = 15
+respuesta = ""
+if temperature <= 20:
+    #Esto va a hacer (4 espacios o un brinco de parrafo, hay que tener cuidado en la identacion)
+    respuesta = "Hace mucho frio"
+elif temperature <= 30:  #else 
+    respuesta = "Ya empieza a hacer calor"
+elif temperature <= 40:  #else 
+    respuesta = "Ya esta re fuerte la  calor"
+else:
+    respuesta = "Me derrito"
+
+print(respuesta)
+    
+
+    
+#%%
+temperatura = 25
+lluvia = False
+if 20 < temperatura <30:
+    print("Está sabrozo")
+    if not lluvia: #La negaciond el if 
+        print("Vámos de picnic!")
+#%%
+"""
+***********************************************************************************************
+FOR
+***********************************************************************************************
+
+"""
+#%%
+numeros = [1,2,3,4,5,6,7,8,9]
+
+for numero in numeros:
+    print(numero)
+    if numero >5:
+        print("Número  es mayor a cinco" )
+    else:
+        print("Numero menor a cinco")
+
+#%%
+for numero in numeros: 
+    print(numero)
+    if numero<=5:
+             print("{} es menor a cinco")
+    else:
+        print("{} es mayor a cinco")
+#%%
+################  L I S T A    ############################     
+#Los ciclos for corren a lo largo de las listas
+#Corre por sus ELEMENTOS, NO por los INDEX
+#%%
+nombres = ["Yesica", "Humberto", "Mayra", "Luis", "Adolfo", "Karen","Christian"]
+
+print(len(nombres))
+#%%
+for nombre in nombres: 
+    print(nombre)
+#%%
+#Rango tiene la funcion como un contador
+    #FUNCION   rango(inicio,final,contador)
+    rango = range(5,10)
+    print(rango)
+#%%
+#Imprimir la lista de nombres con ciclo FOR  e index
+for  i in range(len(nombres)):
+    print(nombres[i])
+#%%
+#Algo interesante de python 
+#es que un STRING es tomada enc uenta como LISTA
+palabra = "Hola cola"
+for caracter in palabra:
+    print(caracter)
+ #%%
+"""
+ EJERCICO 1 
+ Vamos  a convertir la sletras pares en mayúsculas y las impares en minusc d emi palabra
+ OnOMaToPeYa
+"""
+for caracter in palabra:
+    print(caracter)
+#%%
+ #Convertir palabra a index
+palabra = "OnOMaToPeYa"
+nueva_palabra=""
+for i in range(len(palabra)): #convertir en index
+    #print(palabra[i])   Imprimir por index
+    if i%2 == 0:  #Verificar si es par 
+        print(palabra[i].upper() + " Es par") #Muestra la letra y dice si es par 
+        nueva_palabra =nueva_palabra + palabra[i].upper() # 
+    else:
+        print(palabra[i].lower() + " Es impar")
+        nueva_palabra =nueva_palabra + palabra[i].lower()
+        
+print(nueva_palabra)    
+        
+#%%
+################  D I C C I O N A R I O S    ############################  
+#Los ciclos for corren a lo largo de las listas
+#Corre por sus LLAVES, (itera)
+
+#%%
+campeonatos = {
+        "pumas":7,
+        "Cruz_azul":10,
+        "Chivas":12 
+        }
+#%%
+#Imprimir solo los valores de las llaves
+for equipo in campeonatos:
+    print(campeonatos[equipo])
+#%%
+#Iteras al mismo tiempo, con uan referencia directa de la llave y valor. 
+for equipo, campeonato in campeonatos.items():
+    print(equipo,campeonato)
+#%%
+"""
+***********************************************************************************************
+TRY - EXCEPT
+***********************************************************************************************
+"""
+#%%
+variable_misteriosa = "10.5"
+
+#%%
+costo_del_producto = float(variable_misteriosa) + 5
+print(costo_del_producto)
+#%%
+try:
+    costo_del_producto = variable_misteriosa + 5
+except Exception as e:
+    print("Hubo un error")
+#%%   
+try:
+    costo_del_producto = variable_misteriosa + 5
+except Exception as e:
+    print("Hubo un error")
+    print(e,type(e))
+    
