@@ -1,0 +1,108 @@
+# -*- coding: utf-8 -*-
+"""
+Funciones
+Created on Sun Sep 30 11:52:35 2018
+
+@author: mayth
+"""
+
+#%%
+def saludar():
+    print("Hola Grupo!")
+  
+#%%
+print(type(saludar))
+saludar()
+#%%
+def saludar(nombre):
+    print("Hola {}".format(nombre))
+#%%
+saludar("Marcos")
+#%%
+def saludar_despistado(nombre="amigo"):
+    saludar(nombre)
+#%%
+    saludar_despistado("Estefania")
+    saludar_despistado()
+#%%
+#Funcion con NUMEROS
+def suma(a,b):
+    suma = a+b
+    print("Antes del return")
+    return  suma
+    print("Esto se imprimirá?")
+    
+#%%
+    print (suma(3,7))
+#%%
+    print(suma(suma(4,7),9))
+#%%
+#Se puede concatener RETURNS
+def sum_res(a,b):
+    suma = a+b
+    resta = a-b
+    return suma, resta
+
+#%%
+#Desconcatenar la funcion, imprimir solo suma o solo resta,   las funciones concatenadas son TUPLAS
+resultado = sum_res(6,8)
+print(resultado[0]) #Para obtener la suma
+print(resultado[1]) #Para la resta 
+
+#%%
+#En lugar de entrar a la Tupla puedes desempaquetar la Tupla en la igualdad
+
+resultado_suma,resultado_resta = sum_res(6,8)
+print(resultado_suma)
+print(resultado_resta)
+
+#%% 
+"""
+EJERCICIO 2
+
+"""
+#%%
+def suma_resta(a,b,c):
+
+    if c == "suma":
+        return a+b
+    elif c == "resta":
+        return a-b
+    else : 
+        print("La operacion que deseas no existe, elige suma o resta")
+    
+    
+#%%
+print(suma_resta(1,2,"suma"))
+print(suma_resta(1,2,"resta"))
+print(suma_resta(1,2,"Division"))
+#%%
+"""
+EJERCICIO 2
+Verificar si es un palindromo o no 
+"""
+#Para mostrar palabra al reves  o el array al reves es palabra[inicio,final+1,contador] 
+#Para contador a la derecha es +1 de uno en uno, +2 de dos en dos.. etc
+    #Para leer de derecha a izq -1 va de uno en uno y -2 va de dos en dos. 
+palindromo = "Se verde soñado, dañado, ese deseo. De su tren eterno caia con retener tu sed o ese deseo: dañado daño, sed, reves"
+def validar_palabra(palabra):
+    palabra=palabra.lower().replace(" ","").replace(",","").replace(":","").replace(".","")
+    if palabra == palabra[::-1]:
+        print("Es palindormo") ##return True
+    else:
+        print("No es  palindormo") ##return False
+        
+validar_palabra(palindromo)
+#%%
+#%%
+palindromo = "Se verde soñado, dañado, ese deseo. De su tren eterno caia con retener tu sed o ese deseo: dañado daño, sed, reves"
+#%%
+palindromo_1 =palindromo.lower().replace(" ","").replace(",","").replace(":","").replace(".","")
+print(palindromo_1)
+
+#%%
+#Solo esta comparando el numero de caracteres
+if len(palindromo_1)%2-1 ==0 :
+    print("Es palidromo")
+else :
+    print("No es palindromo")
