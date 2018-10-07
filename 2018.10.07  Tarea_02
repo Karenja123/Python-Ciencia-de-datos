@@ -40,8 +40,22 @@ lista_nesteada = [
 ]
 
 la funcion nos deberá devolver:  190.5
-
 """
+
+def suma_de_listas( una_lista):
+suma = 0
+for lista_interna in una_lista:
+	for elemento in lista_interna:
+		 suma = suma+float(elemento)
+	return suma
+#%%
+print(suma_de_listas([7],
+        [1.0,"11",30],
+        [14,5.1,"96.3","7"],
+        ["8.1",9],
+        ["2"]
+]))
+
 #%%
 
 """
