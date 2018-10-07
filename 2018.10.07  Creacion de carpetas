@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+"""
+INPUT Y OUTPUT
+Created on Sun Oct  7 12:04:26 2018
+
+@author: mayth
+"""
+"""
+************************************************************************************************
+CREACION DE CARPETAS
+************************************************************************************************
+"""
+import os
+#%%
+#CREAR CARPETA
+os.makedirs("./data/", exist_ok=True)
+#%%
+#Mostrar nombres de los doc de la carpeta actual 
+archivos_carpeta_actual = os.listdir("./canciones/.")
+print(archivos_carpeta_actual)
+type(archivos_carpeta_actual) 
+#%%
+
+def list_elements_in_dir(directory,file_type):
+    archivos_carpeta_actual = os.listdir(directory)
+    archivos_carpeta_filtrada = [cancion for cancion in archivos_carpeta_actual if file_type in cancion]
+    return archivos_carpeta_filtrada
+   
+#%%
+       archivos_carpeta_filtrada = [cancion for cancion in archivos_carpeta_actual if ".txt" in cancion]
+     archivos_carpeta_filtrada
+#%%
+     print(list_elements_in_dir("./canciones/.",".txt"))
