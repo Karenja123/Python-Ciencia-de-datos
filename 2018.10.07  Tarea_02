@@ -1,0 +1,51 @@
+
+
+
+#%%
+"""
+UNO. De dicho diccionario, convertir todas las claves/llaves a mayúsculas, usando un bucle-"for"
+"""
+dictionario_temporal=dias_semana{}
+
+#%%    
+"""
+DOS. De dicho diccionario, crear una lista de los dias de la semana que contengan 
+ la letra "o"
+"""
+lista_con_o = []
+
+lista_dias = list (dias_semana.keys())
+
+for dias in lista_dias: 
+    #print(dias)
+    for letra in dias:
+    #print(letras)
+      if letra == "o"
+        lista_con_o.append(dias)
+        break
+ print(lista_con_o)      
+        
+#%%  
+"""
+TRES. Crear una funcion que dada UNA LISTA DE LISTAS (con strings, enteros y decimales), nos devuelva la SUMA de todos los elementos.
+
+por ejemplo, si a dicha funcion le pasamos el argumento
+
+lista_nesteada = [
+		[7],
+        [1.0,"11",30],
+        [14,5.1,"96.3","7"],
+        ["8.1",9],
+        ["2"]
+]
+
+la funcion nos deberá devolver:  190.5
+
+"""
+#%%
+
+"""
+CUATRO. Busca la letra de tu canción favorita EN ESPAÑOL y guárdala en un archivo plano de texto (.txt)
+
+"""
+#%%
