@@ -1,0 +1,96 @@
+# -*- coding: utf-8 -*-
+"""
+Estructuras avanzadas
+Created on Sun Oct  7 11:12:18 2018
+
+@author: mayth
+"""
+'''
+**********************************************************************************************
+SETS
+Sirven para dos funciones principales 
+-No duplicar elementos de uan lista 
+-Matematicamente e sun conjunto
+Podemos hacer todas las opp de conjuntos (Interseccion, union)
+**********************************************************************************************
+'''
+#%%
+medios_de_transporte = ["METRO","CARRO","CARRO","CARRO","CARRO","METROBUS","CARRO","CARRO","METROBUS","METROBUS","METROBUS","CARRO","UBER","METROBUS","CARRO","CARRO","METRO"]
+#%%
+print(len(medios_de_transporte))
+#%%
+medios_de_transporte_set = set(medios_de_transporte)
+type(medios_de_transporte_set)
+#%%
+print(medios_de_transporte_set)
+#%%
+set_a_mano = {"METRO","METRO","BICI"}
+print(set_a_mano)
+#%%
+print("METRO" in medios_de_transporte_set )
+print("BICI" in medios_de_transporte_set )
+#%%
+medios_de_transporte_set_2 = set(["CARRO","METROBUS","UBER","METRO","BICI","PATIN","AUTOBUS","AUTOBUS"])
+print(medios_de_transporte_set_2)
+#%%
+#GENERAR LA UNION  a.union(b)
+medios_completos_set = medios_de_transporte_set.union(medios_de_transporte_set_2)
+print(medios_completos_set)
+#%%
+#GENERAR LA INTERSECCION  a.intersection(b)
+medios_comunes_set = medios_de_transporte_set.intersection(medios_de_transporte_set_2)
+print(medios_comunes_set)
+#%%
+#EXCLUSION  b-a
+medios_exclusivos = medios_de_transporte_set_2-medios_de_transporte_set
+print(medios_exclusivos)
+
+#%%
+#AGREGAR ELEMENTOS AL SET
+medios_de_transporte_set_2.add("TROLEBUS")
+print(medios_de_transporte_set_2)
+
+#%%
+#ELIMINAR ELEMENTOS AL SET
+medios_de_transporte_set_2.remove("TROLEBUS")
+print(medios_de_transporte_set_2)
+#%%
+set_A = {"METRO","BICI"}
+set_B = {"METRO","BICI","CARRO"}
+
+#%%
+print(set_A == set_B)
+print(set_A > set_B)
+print(set_A < set_B )
+#%%
+'''
+*************************************************************************************
+COUNTER
+*************************************************************************************
+La clase Counter sirve para contar cosas
+'''
+#%%
+from collections import Counter
+#%%
+medios_de_transporte = ["METRO","CARRO","CARRO","CARRO","CARRO","METROBUS","CARRO","CARRO","METROBUS","METROBUS","METROBUS","CARRO","UBER","METROBUS","CARRO","CARRO","METRO"]
+
+#%%
+recuento_medios_counter = Counter(medios_de_transporte)
+type(recuento_medios_counter)
+print(recuento_medios_counter)  #Es como un diccionario, pero cuenta cuanta sveces encontro las palabras
+#%%
+#Saber cuanta sveces encontro la palabra
+print(recuento_medios_counter["METROBUS"])
+#%%
+#A parti de una lista, puedes manar una nueva lista en la que los elementos no sean unicos, 
+#es decir, hara un nuevo udate de esta lista con los agregados 
+recuento_medios_counter.update(["METROBUS","METRO","METRO"])
+print(recuento_medios_counter["METROBUS"])
+#%%
+#Sumar a los valores .update
+recuento_medios_counter.update({"METROBUS":1, "METRO":9})
+
+#%%
+#Actualizar los valores con esa cuenta en especifico
+recuento_medios_counter["METROBUS"] = 1
+print(recuento_medios_counter)
