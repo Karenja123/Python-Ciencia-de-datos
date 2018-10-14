@@ -1,0 +1,94 @@
+# -*- coding: utf-8 -*-
+"""
+INPUT Y OUTPUT
+Created on Sun Oct  7 12:04:26 2018
+
+@author: mayth
+"""
+"""
+************************************************************************************************
+CREACION DE CARPETAS
+************************************************************************************************
+"""
+import os
+#%%
+#CREAR CARPETA
+os.makedirs("./data/", exist_ok=True)
+#%%
+#Mostrar nombres de los doc de la carpeta actual 
+archivos_carpeta_actual = os.listdir("./canciones/.")
+print(archivos_carpeta_actual)
+type(archivos_carpeta_actual) 
+#%%
+
+def list_elements_in_dir(directory,file_type):
+    archivos_carpeta_actual = os.listdir(directory)
+    archivos_carpeta_filtrada = [cancion for cancion in archivos_carpeta_actual if file_type in cancion]
+    return archivos_carpeta_filtrada
+   
+#%%
+       archivos_carpeta_filtrada = [cancion for cancion in archivos_carpeta_actual if ".txt" in cancion]
+     archivos_carpeta_filtrada
+#%%
+     print(list_elements_in_dir("./canciones",".txt"))
+     
+#%%
+"""
+************************************************************************************************
+LECTURA DE ARCHIVO
+************************************************************************************************
+"""
+#%%
+#ABRIR EL ARCHIVO 
+#NO OLVIDES QUE EN LA PARTE SUP DERECHA DE SPYDER DEBES COLOCAR 
+#EL PATH DE LA CARPETA EN DODNE VA A USCAR, LA CARPETA GENERAL, NO SOLO LA ESPECIFICA. 
+with open ("./canciones/bebe-ella.txt") as file_name:
+    datos = file_name.read()
+print(datos)
+#%%
+#PARA MAC A VECES VA A COSTAR TRABAJO ABRIR ARCHIVOS DE WINDOWS, ES POR ESO QUE SE LE COLOCA REL DECODE
+#QUE ES ABRIRLO EN CRUDO 
+with open ("./canciones/bebe-ella.txt",'rb') as file_name:
+    datos = file_name.read().decode("latin-1")
+print(datos)
+print(type(datos))
+#%%
+#Forma en la cual obtendremso las palabras que componen mi canción
+palabras_en_mi_cancion = []
+with open ("./canciones/bebe-ella.txt",'rb') as file_name:
+    datos = file_name.read().decode("latin-1").replace("\r\n"," ").strip(",").lower()
+    palabras_en_mi_cancion = datos.split(" ")
+print(palabras_en_mi_cancion) 
+
+#%%
+#Contar la spalabras más frecuentes en mi cancion 
+from collections import Counter #MODULO 
+palabras_counter = Counter(palabras_en_mi_cancion)
+print(palabras_counter)
+#%%
+"""
+EJERICIO: 
+    Hacer una funcion que encapsule lo anterios
+    la funcion debe llmarse get words in file
+"""
+
+#%%
+#Funcion que te da las palabras de un archivo
+def get_word_in_file(name_file):
+    palabras = []
+    with open (name_file, 'rb') as file_name:
+        palabras = file_name.read().decode("latin-1").replace("\r\n"," ").strip(",").lower()
+        words = palabras.split(" ")
+    return words
+#%%
+ contar_palabras = Counter(get_word_in_file("./canciones/bebe-ella.txt"))
+ contar_palabras
+#%%
+  print(list_elements_in_dir("./canciones",".txt"))
+#%%
+  couter_total_words = Counter() #Declarar counter vacio
+for name_song in list_elements_in_dir("./canciones",".txt"):
+    #print(name_song)
+    words_in_song = get_word_in_file("./canciones/"+ name_song)
+    couter_total_words.update(words_in_song)
+print(couter_total_words.most_common(30))
